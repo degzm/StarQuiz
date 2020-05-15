@@ -14,22 +14,30 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     private int ids_answer[] = {R.id.answer_1,R.id.answer_2,R.id.answer_3,R.id.answer_4};
+    private int correct_answer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        //Text View donde muestra la pregunta
         TextView text_question = (TextView) findViewById(R.id.text_question);
-        text_question.setText(R.string.question_content);
+        String [] all_questions = getResources().getStringArray(R.array.all_questions);
+        String q0= all_questions[0];
+        String [] parts = q0.split(";");
 
-        String[] answers = getResources().getStringArray(R.array.answers);
+        text_question.setText(parts[0]);
 
         for(int i = 0; i<ids_answer.length;i++) {
             RadioButton rb = (RadioButton) findViewById(ids_answer[i]);
-            rb.setText(String.format(answers[i]));
+            String answer = parts[i+1];
+            if(answer.charAt(0) == '*'){
+                correct_answer = i;
+                answer = answer.substring(1);
+            }
+            rb.setText(answer);
         }
 
-        final int correct_answer = getResources().getInteger(R.integer.correct_answer);
         final RadioGroup rg = (RadioGroup) findViewById(R.id.answer_group);
 
         Button btn_check = (Button) findViewById(R.id.btn_check);
