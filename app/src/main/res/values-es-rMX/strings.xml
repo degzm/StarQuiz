@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">StarQuiz</string>
     <string name="button">Checar</string>
     <string name="question">Pregunta</string>
     <string name="quiz">Questionario</string>
-    <string name="icorrect">Incorrecto</string>
+    <string name="incorrect">Incorrecto</string>
     <string name="correct">Correcto</string>
+    <string name="finish">Acabar</string>
+    <string name="Next">Siguiente</string>
+    <string name="previous">Anterior</string>
 </resources>

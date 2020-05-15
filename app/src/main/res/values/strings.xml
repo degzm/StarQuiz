@@ -1,14 +1,19 @@
 <resources>
-    <string name="app_name">StarQuiz</string>
+    <string name="app_name" translatable="false">StarQuiz</string>
     <string name="question">Question</string>
     <string name="button">Check</string>
     <string name="question_content" translatable="false">Temperaturas de nieves al llegar del CEDIS.</string>
     <string name="quiz">Quiz</string>
     <string name="correct">Correct</string>
-    <string name="icorrect">Incorrect</string>
+    <string name="incorrect">Incorrect</string>
+    <string name="finish">Finish</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
 
     <array name="all_questions">
         <item>Temperatura de la nieve al llegar del CEDIS;Ambiente;*0 a 10 F; 36 a 41 F;No tiene;</item>
+        <item>Velocidad de batidora;50 RPM;*40 RPM;100 RPM;La que sea;</item>
+        <item>Peso de Malteada;18 OZ;10 OZ;9 OZ;*8 OZ;</item>
     </array>
 
 </resources>
