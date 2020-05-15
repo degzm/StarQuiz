@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">StarQuiz</string>
+    <string name="button">Checar</string>
+    <string name="question">Pregunta</string>
+    <string name="quiz">Questionario</string>
+    <string name="icorrect">Incorrecto</string>
+    <string name="correct">Correcto</string>
+</resources>

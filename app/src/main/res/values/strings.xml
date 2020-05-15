@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">StarQuiz</string>
+    <string name="question">Question</string>
+    <string name="button">Check</string>
+    <string name="question_content" translatable="false">Temperaturas de nieves al llegar del CEDIS.</string>
+    <string name="quiz">Quiz</string>
+    <string name="correct">Correct</string>
+    <string name="icorrect">Incorrect</string>
+
+    <string-array name="answers">
+        <item>Ambiente</item>
+        <item>0 a 10 F</item>
+        <item>36 a 41 F</item>
+        <item>No tiene</item>
+    </string-array>
+    <integer name="correct_answer">1</integer>
+
+</resources>
