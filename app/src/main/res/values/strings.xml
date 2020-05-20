@@ -9,11 +9,83 @@
     <string name="finish">Finish</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+    <string name="results">Results</string>
+    <string name="salir">Exit</string>
+    <string name="start_over">Start Over</string>
+    <string name="result_pos">You Pass!</string>
+    <string name="result_neg">Dont Pass :(</string>
+    <string name="malts_test">Malts Test</string>
+    <string name="chemicals_test">Chemicals Test</string>
+    <string name="center_test">Center Test</string>
+    <string name="menu">Menu</string>
+    <string name="temps_test">Temps Test</string>
 
-    <array name="all_questions">
-        <item>Temperatura de la nieve al llegar del CEDIS;Ambiente;*0 a 10 F; 36 a 41 F;No tiene;</item>
+    <array name="malts_questions">
+        <item>Temperatura de la nieve al llegar del CEDIS;Ambiente;*0 a 10 F; 36 a 41 F;No tiene;
+        </item>
         <item>Velocidad de batidora;50 RPM;*40 RPM;100 RPM;La que sea;</item>
+        <item>Que haces si el helado no llega a la temperatura correcta;*Lo deshechas;Asi lo
+            dejas;Lo metes al conge;Le digo al gerente;
+        </item>
         <item>Peso de Malteada;18 OZ;10 OZ;9 OZ;*8 OZ;</item>
+        <item>Peso del Super Cono;6 OZ;10 OZ;*4 OZ;8 OZ;</item>
+        <item>Cantidad de leche en una malteada;Linea gris;*Linea azul;60 ml;100 ml;</item>
+        <item>Cada cuando se lavan las batidoras;2 Horas;4 Horas;*En cada oportunidad;1 Hora;</item>
+        <item>Donde se almacena la crema batida al llegar;Refrigerador;*Congelador;Secos;Lateral;
+        </item>
+        <item>Donde se almacena la leche?;Secos;*Refrigerador lateral;En el estante;En el
+            congelador;
+        </item>
+        <item>Que significa la palabra atareado?;Con muchas tareas;Con muchas ordenes;Muy
+            activo;*Todas las anteriores;
+        </item>
+        <item>Donde se almacena el jarabe de vainilla?;*Secos;Refrigerador;Contenedor;Quimicos;
+        </item>
+        <item>La leche es un producto PHF?;*Si;No;Depende;Solo a 42 F;</item>
+        <item>Que es un PHF?;Producto alergeno;Producto temporal;*Producto alergeno y
+            peligroso;Producto delicado;
+        </item>
     </array>
 
+    <array name="chems_questions">
+        <item>Quimico para desengrasar;Super Rave;Super San;Degrill;*Inside Out;</item>
+        <item>Quimico para limpiar vidrios;Super San;*Multi Shine;Inside In;Polish;</item>
+        <item>Quimico para limpiar Parrilla;*Degrill;Inside Out;Super Rave;Track;</item>
+        <item>Quimico para pulir freidoras;Inside Out;*Magnasol;Super San;Super Rave</item>
+        <item>Quimico para lavar trastes;Super San;Track;*Super Rave;Magnasol;</item>
+        <item>Quimico para sanitizar trastes;Super Rave;Polish;*Super San;Degrill;</item>
+        <item>Quimico para lavar verduras;MultiSheen;Cloro;*Veggie Wash;Polish</item>
+        <item>Concentracion en PPM para lavar verdura;200 PPM;*100 PPM;400 PPM;10 PPM;</item>
+        <item>Concentracion segura del nuevo Sanitizante;*100 PPM;200 PPM;300 PPM;400 PPM;</item>
+        <item>Cuanto tiempo dejas remojando la tira medidora?;5 Seg.;*10 Seg.;15 Seg;20 Seg.;</item>
+        <item>Quimico para lavar manos de empleados;*Foaming;Contender;Alphasan;Super San;</item>
+        <item>Quimico para lavar manos de invitados;Foaming;*Contender;Alphasan;Super San</item>
+        <item>Quimico para sanitizar manos;Super San;Polish;*Alphasan;Key Sanitizer</item>
+        <item>Que es una hoja MSDS;Hoja de seguridad;Hoja de informacion;Hojas de quimicos;*Todas las anteriores;</item>
+        <item>Donde encuentras las MSDS?;*En la oficina;En internet;En el almacen;En la caja;</item>
+    </array>
+
+    <array name="front_questions">
+        <item>Tu prioridad es: ;Rapidez;Exactitud;Concentracion;Todas las anteriores;</item>
+        <item>Que es CCCCF?;*Calidad,Cantidad,Comida Caliente y Fresca;Mision;Vision;Metas;</item>
+        <item>Que es ABLO?;Abastecido,Brillante,Organizado;*Abastecido, en Buen estado, Limpio y Organizado;Mision;Vision</item>
+        <item>Timer de Jarabes;*30 Minutos;15 Minutos;10 Minutos;40 Minutos;</item>
+        <item>Timer de Baños;*30 Minutos;15Minutos;10 Minutos;40 Minutos;</item>
+        <item>Timer de Manos;30 Minutos;15 Minutos;10 Minutos;*20 Minutos;</item>
+        <item>Timer de Pancakes;30 Minutos;15 Minutos;*10 Minutos;40 Minutos;</item>
+        <item>Timer de Aderezos;*30 Minutos;15 Minutos;10 Minutos;40 Minutos;</item>
+        <item>Las ordenes en comedor, llevan servilletas?;*Si;No;A veces;Depende;</item>
+        <item>Servilletas en Hamburguesas ThickBurguer;1 Pz;4 Pz;*3 Pz;5 Pz;</item>
+        <item>Servilletas en Hamburguesas;1 Pz;*2 Pz;3 Pz;5 Pz;</item>
+        <item>Servilletas en Papas;*1 Pz;2 Pz;3 Pz;5 Pz;</item>
+        <item>Servilletas en estrellas;4 Lleva 1;6 Lleva 2;9 Lleva 3;*Todas las anteriores;</item>
+        <item>Servilletas en Hamburguesas;1 Pz;*2 Pz;3 Pz;5 Pz</item>
+        <item>Estos son aderezos de ensalada;*Vinagreta;Classic Sauce;Honey Mustard;*Todas las anteriores;</item>
+        <item>Un baño limpio refleja...;La limpieza de cocina;*La limpieza del restaurante;Nuestros habitos;El baño;</item>
+        <item>Si recibes una queja...;Le hablo al gerente;*Me disculpo y le hablo al supervisor;Nada;La ignoro;</item>
+    </array>
+
+    <array name="temps_questions">
+        <item>Temperatura de carne 35 Oz;40 F;*60 F;39 F; 100 F;</item>
+    </array>
 </resources>
