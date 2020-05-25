@@ -58,7 +58,7 @@ public class ChemsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.malts_activity);
+        setContentView(R.layout.chems_activity);
 
         text_question = findViewById(R.id.text_question);
         group = findViewById(R.id.chems_group);
@@ -83,7 +83,7 @@ public class ChemsActivity extends AppCompatActivity {
         }
 
         //Grupo de incisos
-        //final RadioGroup rg = findViewById(R.id.malts_group);
+        final RadioGroup group = findViewById(R.id.malts_group);
 
         //Listener de boton checar
         btn_next.setOnClickListener(new View.OnClickListener() {

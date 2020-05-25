@@ -59,7 +59,7 @@ public class TempsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.malts_activity);
+        setContentView(R.layout.temps_activity);
 
         text_question = findViewById(R.id.text_question);
         group = findViewById(R.id.temps_group);

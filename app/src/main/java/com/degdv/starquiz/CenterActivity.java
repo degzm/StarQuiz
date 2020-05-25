@@ -59,7 +59,7 @@ public class CenterActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.malts_activity);
+        setContentView(R.layout.center_activity);
 
         text_question = findViewById(R.id.text_question);
         group = findViewById(R.id.center_group);
