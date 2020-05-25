@@ -18,4 +18,8 @@
     <string name="center_test">Examen de Centros</string>
     <string name="menu">Menu</string>
     <string name="temps_test">Examen de temperaturas</string>
+    <string name="enter">Entrar</string>
+    <string name="pasword">Contraseña</string>
+    <string name="tryagain">Intentar de nuevo</string>
+    <string name="dining_test">Examen de limpieza (Comedor)</string>
 </resources>

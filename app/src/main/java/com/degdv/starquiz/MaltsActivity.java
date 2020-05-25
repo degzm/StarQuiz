@@ -3,6 +3,7 @@ package com.degdv.starquiz;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,14 +13,14 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import java.util.Arrays;
+
 public class MaltsActivity extends AppCompatActivity {
     public static final String CORRECT_ANSWER = "correct_answer";
     public static final String CURRENT_CUESTION = "current_cuestion";
     public static final String ANSWER_IS_CORRECT = "answer_is_correct";
     public static final String ANSWER = "answer";
-    /**
-     *
-     */
+
     private int[] ids_answer = {R.id.answer_1,R.id.answer_2,R.id.answer_3,R.id.answer_4};
     private int correct_answer;
     private int current_cuestion;
@@ -54,13 +55,14 @@ public class MaltsActivity extends AppCompatActivity {
         outState.putIntArray(ANSWER, answer);
     }
 
+    @SuppressLint("CutPasteId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.malts_activity);
 
         text_question = findViewById(R.id.text_question);
-        group = findViewById(R.id.answer_group);
+        group = findViewById(R.id.malts_group);
         btn_next = findViewById(R.id.btn_check);
         btn_prev = findViewById(R.id.btn_prev);
         btn_menu = findViewById(R.id.btnMenu);
@@ -69,25 +71,20 @@ public class MaltsActivity extends AppCompatActivity {
         answer_is_correct = new boolean[malts_questions.length];
         answer = new int[malts_questions.length];
         //Rellenamos con -1 de momento
-        for(int i = 0; i < answer.length; i++){
-            answer[i] = -1;
-        }
+        Arrays.fill(answer, -1);
         current_cuestion = 0;
         showQuestion();
 
-        if(savedInstanceState == null){
-
-        }else{
-            Bundle state = savedInstanceState;
-            correct_answer = state.getInt(CORRECT_ANSWER);
-            current_cuestion = state.getInt(CURRENT_CUESTION);
-            answer_is_correct = state.getBooleanArray(ANSWER_IS_CORRECT);
-            answer = state.getIntArray(ANSWER);
+        if (savedInstanceState != null) {
+            correct_answer = savedInstanceState.getInt(CORRECT_ANSWER);
+            current_cuestion = savedInstanceState.getInt(CURRENT_CUESTION);
+            answer_is_correct = savedInstanceState.getBooleanArray(ANSWER_IS_CORRECT);
+            answer = savedInstanceState.getIntArray(ANSWER);
             showQuestion();
         }
 
         //Grupo de incisos
-        final RadioGroup rg = findViewById(R.id.answer_group);
+        //final RadioGroup rg = findViewById(R.id.malts_group);
 
         //Listener de boton checar
         btn_next.setOnClickListener(new View.OnClickListener() {
@@ -121,9 +118,7 @@ public class MaltsActivity extends AppCompatActivity {
         btn_menu.setVisibility(View.GONE);
         answer_is_correct = new boolean[malts_questions.length];
         answer = new int[malts_questions.length];
-        for (int i = 0; i < answer.length; i++) {
-            answer[i] = -1;
-        }
+        Arrays.fill(answer, -1);
         current_cuestion = 0;
         showQuestion();
     }
@@ -137,7 +132,7 @@ public class MaltsActivity extends AppCompatActivity {
             else if (answer[i] == -1) noCont++;
             else incorrectas++;
         }
-        String message = String.format("Correctas: %d" + "\nIncorrectas: %d" + "\nNo contestadas: %d\n" ,correctas,incorrectas, noCont);
+        @SuppressLint("DefaultLocale") String message = String.format("Correctas: %d" + "\nIncorrectas: %d" + "\nNo contestadas: %d\n" ,correctas,incorrectas, noCont);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
         int porc = (correctas*100)/cont;

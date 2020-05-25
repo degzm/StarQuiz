@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MaltsActivity">
 
     <TextView
         android:id="@+id/label_question"
@@ -49,7 +49,7 @@
         app:layout_constraintTop_toBottomOf="@+id/text_question" />
 
     <RadioGroup
-        android:id="@+id/answer_group"
+        android:id="@+id/malts_group"
         android:layout_width="384dp"
         android:layout_height="138dp"
         android:layout_marginStart="16dp"

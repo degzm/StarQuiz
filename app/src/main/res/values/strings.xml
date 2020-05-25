@@ -19,6 +19,10 @@
     <string name="center_test">Center Test</string>
     <string name="menu">Menu</string>
     <string name="temps_test">Temps Test</string>
+    <string name="enter">Enter</string>
+    <string name="pasword">pasword</string>
+    <string name="tryagain">Try Again</string>
+    <string name="dining_test">Dining test</string>
 
     <array name="malts_questions">
         <item>Temperatura de la nieve al llegar del CEDIS;Ambiente;*0 a 10 F; 36 a 41 F;No tiene;
@@ -61,14 +65,18 @@
         <item>Quimico para lavar manos de empleados;*Foaming;Contender;Alphasan;Super San;</item>
         <item>Quimico para lavar manos de invitados;Foaming;*Contender;Alphasan;Super San</item>
         <item>Quimico para sanitizar manos;Super San;Polish;*Alphasan;Key Sanitizer</item>
-        <item>Que es una hoja MSDS;Hoja de seguridad;Hoja de informacion;Hojas de quimicos;*Todas las anteriores;</item>
+        <item>Que es una hoja MSDS;Hoja de seguridad;Hoja de informacion;Hojas de quimicos;*Todas
+            las anteriores;
+        </item>
         <item>Donde encuentras las MSDS?;*En la oficina;En internet;En el almacen;En la caja;</item>
     </array>
 
-    <array name="front_questions">
+    <array name="center_questions">
         <item>Tu prioridad es: ;Rapidez;Exactitud;Concentracion;Todas las anteriores;</item>
         <item>Que es CCCCF?;*Calidad,Cantidad,Comida Caliente y Fresca;Mision;Vision;Metas;</item>
-        <item>Que es ABLO?;Abastecido,Brillante,Organizado;*Abastecido, en Buen estado, Limpio y Organizado;Mision;Vision</item>
+        <item>Que es ABLO?;Abastecido,Brillante,Organizado;*Abastecido, en Buen estado, Limpio y
+            Organizado;Mision;Vision
+        </item>
         <item>Timer de Jarabes;*30 Minutos;15 Minutos;10 Minutos;40 Minutos;</item>
         <item>Timer de Baños;*30 Minutos;15Minutos;10 Minutos;40 Minutos;</item>
         <item>Timer de Manos;30 Minutos;15 Minutos;10 Minutos;*20 Minutos;</item>
@@ -80,12 +88,35 @@
         <item>Servilletas en Papas;*1 Pz;2 Pz;3 Pz;5 Pz;</item>
         <item>Servilletas en estrellas;4 Lleva 1;6 Lleva 2;9 Lleva 3;*Todas las anteriores;</item>
         <item>Servilletas en Hamburguesas;1 Pz;*2 Pz;3 Pz;5 Pz</item>
-        <item>Estos son aderezos de ensalada;*Vinagreta;Classic Sauce;Honey Mustard;*Todas las anteriores;</item>
-        <item>Un baño limpio refleja...;La limpieza de cocina;*La limpieza del restaurante;Nuestros habitos;El baño;</item>
-        <item>Si recibes una queja...;Le hablo al gerente;*Me disculpo y le hablo al supervisor;Nada;La ignoro;</item>
+        <item>Estos son aderezos de ensalada;*Vinagreta;Classic Sauce;Honey Mustard;*Todas las
+            anteriores;
+        </item>
+        <item>Un baño limpio refleja...;La limpieza de cocina;*La limpieza del restaurante;Nuestros
+            habitos;El baño;
+        </item>
+        <item>Si recibes una queja...;Le hablo al gerente;*Me disculpo y le hablo al
+            supervisor;Nada;La ignoro;
+        </item>
     </array>
 
     <array name="temps_questions">
         <item>Temperatura de carne 35 Oz;40 F;*60 F;39 F; 100 F;</item>
     </array>
+
+    <array name="dinin_questions">
+        <item>Color del mandil de limpieza;Negro;*Rojo;Azul;Amarillo;</item>
+        <item>Nombre de esta posicion;*Cero;Limpiador;Clean Dean;Comedor;</item>
+        <item>Que es lo que se limpia?;Frente;*Comedor;Cocina;Play;</item>
+        <item>Los materiales de limpieza deben estar...;Limpios;En buen estado;Organizados;*Todas
+            las anteriores;
+        </item>
+        <item>Trapo blanco;Cocina;*Frente;Baños;Tender;</item>
+        <item>Trapo amarillo;*Cocina;Frente;Baños;Tender;</item>
+        <item>Trapo verde;Cocina;Frente;Baños;*Tender;</item>
+        <item>Trapo azul;Cocina;Frente;*Baños;Tender;</item>
+        <item>Que se usa para trapear?;*Track y agua;Jabon y agua;Inside Out y agua;Super Rave y
+            agua;
+        </item>
+    </array>
+
 </resources>

@@ -9,13 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MaltsActivity"/>
-        <activity android:name=".ChemsActivity"/>
-        <activity android:name=".FrontalActivity"/>
-        <activity android:name=".TempsActivity"/>
-        <activity android:name=".MenuPrinci" >
+        <activity android:name=".TempsActivity"></activity>
+        <activity android:name=".CenterActivity" />
+        <activity android:name=".ChemsActivity" />
+        <activity android:name=".MaltsActivity" />
+        <activity android:name=".MenuPrinci" />
+        <activity android:name=".LoginAct">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

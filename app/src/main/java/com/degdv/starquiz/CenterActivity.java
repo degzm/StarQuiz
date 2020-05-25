@@ -1,5 +1,9 @@
 package com.degdv.starquiz;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,21 +13,18 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
+import java.util.Arrays;
 
-public class FrontalActivity extends AppCompatActivity {
+public class CenterActivity extends AppCompatActivity {
     public static final String CORRECT_ANSWER = "correct_answer";
     public static final String CURRENT_CUESTION = "current_cuestion";
     public static final String ANSWER_IS_CORRECT = "answer_is_correct";
     public static final String ANSWER = "answer";
-    /**
-     *
-     */
+
     private int[] ids_answer = {R.id.answer_1,R.id.answer_2,R.id.answer_3,R.id.answer_4};
     private int correct_answer;
     private int current_cuestion;
-    private String[] frontal_questions;
+    private String[] center_questions;
     private boolean [] answer_is_correct;
     private int[] answer;
     private TextView text_question;
@@ -54,47 +55,43 @@ public class FrontalActivity extends AppCompatActivity {
         outState.putIntArray(ANSWER, answer);
     }
 
+    @SuppressLint("CutPasteId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.malts_activity);
 
         text_question = findViewById(R.id.text_question);
-        group = findViewById(R.id.answer_group);
+        group = findViewById(R.id.center_group);
         btn_next = findViewById(R.id.btn_check);
         btn_prev = findViewById(R.id.btn_prev);
         btn_menu = findViewById(R.id.btnMenu);
         btn_menu.setVisibility(View.GONE);
-        frontal_questions = getResources().getStringArray(R.array.front_questions);
-        answer_is_correct = new boolean[frontal_questions.length];
-        answer = new int[frontal_questions.length];
+        center_questions = getResources().getStringArray(R.array.center_questions);
+        answer_is_correct = new boolean[center_questions.length];
+        answer = new int[center_questions.length];
         //Rellenamos con -1 de momento
-        for(int i = 0; i < answer.length; i++){
-            answer[i] = -1;
-        }
+        Arrays.fill(answer, -1);
         current_cuestion = 0;
         showQuestion();
 
-        if(savedInstanceState == null){
-
-        }else{
-            Bundle state = savedInstanceState;
-            correct_answer = state.getInt(CORRECT_ANSWER);
-            current_cuestion = state.getInt(CURRENT_CUESTION);
-            answer_is_correct = state.getBooleanArray(ANSWER_IS_CORRECT);
-            answer = state.getIntArray(ANSWER);
+        if (savedInstanceState != null) {
+            correct_answer = savedInstanceState.getInt(CORRECT_ANSWER);
+            current_cuestion = savedInstanceState.getInt(CURRENT_CUESTION);
+            answer_is_correct = savedInstanceState.getBooleanArray(ANSWER_IS_CORRECT);
+            answer = savedInstanceState.getIntArray(ANSWER);
             showQuestion();
         }
 
         //Grupo de incisos
-        final RadioGroup rg = findViewById(R.id.answer_group);
+        //final RadioGroup rg = findViewById(R.id.malts_group);
 
         //Listener de boton checar
         btn_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 chechAnswer();
-                if(current_cuestion < frontal_questions.length-1){
+                if(current_cuestion < center_questions.length-1){
                     current_cuestion++;
                     showQuestion();
                 }else{
@@ -103,6 +100,7 @@ public class FrontalActivity extends AppCompatActivity {
             }
         });
 
+        //Boton atras
         btn_prev.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -115,13 +113,12 @@ public class FrontalActivity extends AppCompatActivity {
         });
     }
 
+    //Iniciar de nuevo
     private void startOver() {
         btn_menu.setVisibility(View.GONE);
-        answer_is_correct = new boolean[frontal_questions.length];
-        answer = new int[frontal_questions.length];
-        for (int i = 0; i < answer.length; i++) {
-            answer[i] = -1;
-        }
+        answer_is_correct = new boolean[center_questions.length];
+        answer = new int[center_questions.length];
+        Arrays.fill(answer, -1);
         current_cuestion = 0;
         showQuestion();
     }
@@ -129,15 +126,13 @@ public class FrontalActivity extends AppCompatActivity {
 
     private void checkResult() {
         int correctas = 0, incorrectas = 0, noCont = 0, cont = 0;
-
-        for(int i = 0; i < frontal_questions.length; i++){
+        for(int i = 0; i < center_questions.length; i++){
             cont++;
             if(answer_is_correct[i]) correctas++;
             else if (answer[i] == -1) noCont++;
             else incorrectas++;
         }
-
-        String message = String.format("Correctas: %d" + "\nIncorrectas: %d" + "\nNo contestadas: %d\n" ,correctas,incorrectas, noCont);
+        @SuppressLint("DefaultLocale") String message = String.format("Correctas: %d" + "\nIncorrectas: %d" + "\nNo contestadas: %d\n" ,correctas,incorrectas, noCont);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
         int porc = (correctas*100)/cont;
@@ -183,7 +178,7 @@ public class FrontalActivity extends AppCompatActivity {
 
 
     private void showQuestion() {
-        String q = frontal_questions[current_cuestion];
+        String q = center_questions[current_cuestion];
         String [] parts = q.split(";");
 
         group.clearCheck();
@@ -206,7 +201,7 @@ public class FrontalActivity extends AppCompatActivity {
         }else{
             btn_prev.setVisibility(View.VISIBLE);
         }
-        if(current_cuestion == frontal_questions.length-1){
+        if(current_cuestion == center_questions.length-1){
             btn_next.setText(R.string.finish);
         }else{
             btn_next.setText(R.string.next);
