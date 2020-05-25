@@ -23,6 +23,7 @@
     <string name="pasword">pasword</string>
     <string name="tryagain">Try Again</string>
     <string name="dining_test">Dining test</string>
+    <string name="password">Password</string>
 
     <array name="malts_questions">
         <item>Temperatura de la nieve al llegar del CEDIS;Ambiente;*0 a 10 F; 36 a 41 F;No tiene;
