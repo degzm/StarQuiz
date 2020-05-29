@@ -44,6 +44,7 @@ public class LoginAct extends AppCompatActivity {
         } else{
             builder.setTitle("Contraseña incorrecta.");
             builder.setMessage("Usuario no autorizado.\nNo es posible iniciar los examenes!");
+            builder.setIcon(R.drawable.no64);
             builder.setNegativeButton(R.string.tryagain, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {

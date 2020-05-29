@@ -138,6 +138,9 @@ public class TempsActivity extends AppCompatActivity {
         int porc = (correctas*100)/cont;
         builder.setTitle("Sacaste: " + porc);
 
+        if(porc>=85) {builder.setIcon(R.drawable.bueno);}
+        else if (porc<=84){builder.setIcon(R.drawable.malo);};
+
         builder.setMessage(message + "\nEspera a que el supervisor guarde tus resultados!");
         btn_prev.setVisibility(View.GONE);
         btn_menu.setVisibility(View.VISIBLE);

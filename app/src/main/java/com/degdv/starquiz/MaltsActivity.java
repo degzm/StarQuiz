@@ -113,7 +113,7 @@ public class MaltsActivity extends AppCompatActivity {
         });
     }
 
-    //Iniciar de nuevo
+//Metodo para iniciar de nuevo
     private void startOver() {
         btn_menu.setVisibility(View.GONE);
         answer_is_correct = new boolean[malts_questions.length];
@@ -123,7 +123,7 @@ public class MaltsActivity extends AppCompatActivity {
         showQuestion();
     }
 
-
+//Metodo que checa el resultado
     private void checkResult() {
         int correctas = 0, incorrectas = 0, noCont = 0, cont = 0;
         for(int i = 0; i < malts_questions.length; i++){
@@ -134,9 +134,12 @@ public class MaltsActivity extends AppCompatActivity {
         }
         @SuppressLint("DefaultLocale") String message = String.format("Correctas: %d" + "\nIncorrectas: %d" + "\nNo contestadas: %d\n" ,correctas,incorrectas, noCont);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-
+        //Calculamos el porcentaje
         int porc = (correctas*100)/cont;
         builder.setTitle("Sacaste: " + porc);
+
+        if(porc>=85) {builder.setIcon(R.drawable.bueno);}
+        else if (porc<=84){builder.setIcon(R.drawable.malo);};
 
         builder.setMessage(message + "\nEspera a que el supervisor guarde tus resultados!");
         btn_prev.setVisibility(View.GONE);
@@ -163,6 +166,7 @@ public class MaltsActivity extends AppCompatActivity {
         builder.create().show();
     }
 
+//Metodo que checa la pregunta/respuesta
     private void chechAnswer() {
         int id = group.getCheckedRadioButtonId();
         int ans = -1;
@@ -176,7 +180,7 @@ public class MaltsActivity extends AppCompatActivity {
         answer[current_cuestion] = ans;
     }
 
-
+//Metodo que cambia/muestra de pregunta
     private void showQuestion() {
         String q = malts_questions[current_cuestion];
         String [] parts = q.split(";");
