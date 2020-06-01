@@ -1,5 +1,6 @@
 package com.degdv.starquiz;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -55,16 +56,14 @@ public class MenuPrinci extends AppCompatActivity {
                 startActivityForResult(intent, 0);
             }
         });
-/*
-        btn_Dining = findViewById(R.id.btnDining);
+
+        btn_Dining = findViewById(R.id.btnDrive);
         btn_Dining.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), DiningActivity.class);
+                Intent intent = new Intent(v.getContext(),DriveActivity.class);
                 startActivityForResult(intent, 0);
             }
         });
-
-        */
     }
 }

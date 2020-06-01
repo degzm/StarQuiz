@@ -23,4 +23,5 @@
     <string name="tryagain">Intentar de nuevo</string>
     <string name="dining_test">Examen de limpieza (Comedor)</string>
     <string name="password">Contraseña</string>
+    <string name="drive_test">Examen de DriveThru</string>
 </resources>

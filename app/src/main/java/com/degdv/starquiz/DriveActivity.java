@@ -15,7 +15,7 @@ import android.widget.TextView;
 
 import java.util.Arrays;
 
-public class MaltsActivity extends AppCompatActivity {
+public class DriveActivity extends AppCompatActivity {
     public static final String CORRECT_ANSWER = "correct_answer";
     public static final String CURRENT_CUESTION = "current_cuestion";
     public static final String ANSWER_IS_CORRECT = "answer_is_correct";
@@ -24,7 +24,7 @@ public class MaltsActivity extends AppCompatActivity {
     private int[] ids_answer = {R.id.answer_1,R.id.answer_2,R.id.answer_3,R.id.answer_4};
     private int correct_answer;
     private int current_cuestion;
-    private String[] malts_questions;
+    private String[] drive_questions;
     private boolean [] answer_is_correct;
     private int[] answer;
     private TextView text_question;
@@ -59,17 +59,17 @@ public class MaltsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.malts_activity);
+        setContentView(R.layout.drive_activity);
 
         text_question = findViewById(R.id.text_question);
-        group = findViewById(R.id.malts_group);
+        group = findViewById(R.id.drive_group);
         btn_next = findViewById(R.id.btn_check);
         btn_prev = findViewById(R.id.btn_prev);
         btn_menu = findViewById(R.id.btnMenu);
         btn_menu.setVisibility(View.GONE);
-        malts_questions = getResources().getStringArray(R.array.drive_questions);
-        answer_is_correct = new boolean[malts_questions.length];
-        answer = new int[malts_questions.length];
+        drive_questions = getResources().getStringArray(R.array.drive_questions);
+        answer_is_correct = new boolean[drive_questions.length];
+        answer = new int[drive_questions.length];
         //Rellenamos con -1 de momento
         Arrays.fill(answer, -1);
         current_cuestion = 0;
@@ -91,7 +91,7 @@ public class MaltsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 chechAnswer();
-                if(current_cuestion < malts_questions.length-1){
+                if(current_cuestion < drive_questions.length-1){
                     current_cuestion++;
                     showQuestion();
                 }else{
@@ -113,20 +113,20 @@ public class MaltsActivity extends AppCompatActivity {
         });
     }
 
-//Metodo para iniciar de nuevo
+    //Metodo para iniciar de nuevo
     private void startOver() {
         btn_menu.setVisibility(View.GONE);
-        answer_is_correct = new boolean[malts_questions.length];
-        answer = new int[malts_questions.length];
+        answer_is_correct = new boolean[drive_questions.length];
+        answer = new int[drive_questions.length];
         Arrays.fill(answer, -1);
         current_cuestion = 0;
         showQuestion();
     }
 
-//Metodo que checa el resultado
+    //Metodo que checa el resultado
     private void checkResult() {
         int correctas = 0, incorrectas = 0, noCont = 0, cont = 0;
-        for(int i = 0; i < malts_questions.length; i++){
+        for(int i = 0; i < drive_questions.length; i++){
             cont++;
             if(answer_is_correct[i]) correctas++;
             else if (answer[i] == -1) noCont++;
@@ -166,7 +166,7 @@ public class MaltsActivity extends AppCompatActivity {
         builder.create().show();
     }
 
-//Metodo que checa la pregunta/respuesta
+    //Metodo que checa la pregunta/respuesta
     private void chechAnswer() {
         int id = group.getCheckedRadioButtonId();
         int ans = -1;
@@ -180,9 +180,9 @@ public class MaltsActivity extends AppCompatActivity {
         answer[current_cuestion] = ans;
     }
 
-//Metodo que cambia/muestra de pregunta
+    //Metodo que cambia/muestra de pregunta
     private void showQuestion() {
-        String q = malts_questions[current_cuestion];
+        String q = drive_questions[current_cuestion];
         String [] parts = q.split(";");
 
         group.clearCheck();
@@ -205,7 +205,7 @@ public class MaltsActivity extends AppCompatActivity {
         }else{
             btn_prev.setVisibility(View.VISIBLE);
         }
-        if(current_cuestion == malts_questions.length-1){
+        if(current_cuestion == drive_questions.length-1){
             btn_next.setText(R.string.finish);
         }else{
             btn_next.setText(R.string.next);

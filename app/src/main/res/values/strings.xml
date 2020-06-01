@@ -24,6 +24,7 @@
     <string name="tryagain">Try Again</string>
     <string name="dining_test">Dining test</string>
     <string name="password">Password</string>
+    <string name="drive_test">Drive Test</string>
 
     <array name="malts_questions">
         <item>Temperatura de la nieve al llegar del CEDIS;Ambiente;*0 a 10 F; 36 a 41 F;No tiene;
@@ -118,6 +119,10 @@
         <item>Que se usa para trapear?;*Track y agua;Jabon y agua;Inside Out y agua;Super Rave y
             agua;
         </item>
+    </array>
+
+    <array name="drive_questions">
+        <item>Tiempo del drive;*3:30;4:30;5:30;3:00;</item>
     </array>
 
 </resources>
